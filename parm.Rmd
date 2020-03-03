@@ -1,0 +1,21 @@
+
+# z-tests
+
+
+# Parametric Tests
+
+## t-tests
+
+But executives at MSNBC had been discussing a potential retirement plan for Mr. Matthews for months, according to two people familiar with internal network discussions. There was talk of shifting “Hardball” to a less prominent time of day, during MSNBC’s afternoon lineup.
+
+## ANOVA
+
+But executives at MSNBC had been discussing a potential retirement plan for Mr. Matthews for months, according to two people familiar with internal network discussions. There was talk of shifting “Hardball” to a less prominent time of day, during MSNBC’s afternoon lineup.
+
+## Regression
+
+But executives at MSNBC had been discussing a potential retirement plan for Mr. Matthews for months, according to two people familiar with internal network discussions. There was talk of shifting “Hardball” to a less prominent time of day, during MSNBC’s afternoon lineup.
+
+## The Generalized Linear Model
+
+But executives at MSNBC had been discussing a potential retirement plan for Mr. Matthews for months, according to two people familiar with internal network discussions. There was talk of shifting “Hardball” to a less prominent time of day, during MSNBC’s afternoon lineup.

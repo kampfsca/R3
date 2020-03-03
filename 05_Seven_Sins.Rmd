@@ -1,0 +1,33 @@
+
+# Seven Deadly Sins of Significance Testing
+
+## Planning and Design
+
+Run-charts? 
+
+When a study has **low statistical power** it is unlikely to obtain a statistically significant result, even when a true effect is present. Also, low poer increases the false discovery rate (the proportion of studies with false-positive results among all studies with positive results). Thus, the outcomes of underpowered studies must be interpreted with great caution. Low-powered studies can be avoided by using appropriate sample size calculations and supporting larger studies.
+
+
+**Pseudoreplication** is the process of artificially inflating a study's sample size by treating data as independent when they are not. An example might be where repeated measurements are taken from a small sample of animals; however, the data are analyzed as if they were independent measures from a larger sample. Doing so can lead to standard errors that are too small, and to results being found to erroneously statistically significant. Such issues can be avoided by appropriate use of statistical methods that the experimental design.
+
+
+## Execution and Data Collection
+
+**Repeated inspection of data** when new data are added considerably increases the probability that a significant finding is a false positive. This can be avoided by not analyzing the data before the study has been completed and the planned sample size has been reached. There are some scenarios in which stopping a study early can be justified. However, such situations need to be predifined, and adequate statistical methods must be used in the analysis.
+
+
+## Data Processing and Analysis
+When researchers analyse data, there are many choices on how to process, transform, and model data. **p-hacking** occurs when analysts exploit these "researcher degrees of freedom" until a statistically significant result is found. *p-hacking* can be avoided by writing a statistical analysis plan before data are available. 
+
+
+## Presentation and Interpretation
+
+**Selective reporting** occurs when authors do not include particular results for any reason; for example, when th directionality of a particular finding is in conflict with that desired by the researcher. Transparent reporting can be ensured with preregistered studies, publicly available study protocols and adherence to reporting guidelines.
+
+Confirmatory research requires hypotheses to be specified in advance, before the data are seen and a statistical test performed. Sometimes, however, researchers perform a number of tests until a statistically significant result is obtaned. Then the hypothesis is generated *post-hoc*, as if it was in fact an *a priori* hypothesis. **HARKing** (*hypothesis after the results are known*) can be avoided with a pre-registered protocol that includes a primary outcome and a statistical analysis plan.
+
+## Publication Bias
+
+**Publication bias** occurs when statistically non-significant results are less likely to be submitted by researchers and published journals. Publication bias can be avoided with registered reports, whereby high-quality study protocols are provisionally accepted for publication prior to data analysis and independent of statsitical significance. 
+
+

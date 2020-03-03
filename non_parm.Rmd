@@ -1,0 +1,23 @@
+
+
+# Non-Paramteric Tests
+
+The most frequently used used family of tests are often referred to as *parametric tests* (t-tests, $\chi^2$ tests, ANOVA, etc.). These are referred to parametric because they all rely on an underlying assumption that the distribution of the outcome variable follows a pre-determined distribution; usually the normal-distribution. This means that when testing a continuous variable, like heart rate, we make the often lofty assumption that the underlying sampling distribution of the population average heart rate is normal, and from this normal distribution we can derive the precise probability & location of our sample.
+
+However, this often isn't the case. Statisticians have done a wonderful job of deriving flexible distributions to create paramteric tests, but there situations where there is no underlying distribution to rely on. Therefore, we resort to *non-parametric* testing when assumptions of normality, or ditsribution shape, cannot be met.
+
+It is appropriate to use Non-Parametric Tests when:
+
+  - The scale of the response variable is ordinal
+  - The outcome variable is a Rank
+  - There are rampant outliers in the data
+  - When there too few observations to invoke Central Limit Theorem
+
+> **Note:** Non-parametric methods are frequently overlooked for the analysis of likert-scale variables (ie pain-scales, severity scores, happiness ratings, etc)
+
+## Mann-Whitney
+
+
+
+## Kruskall-Wallace
+

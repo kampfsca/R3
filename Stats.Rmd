@@ -1,0 +1,309 @@
+---
+title: "<br>Statistical Considerations <br>for Study Design"
+subtitle: "Dude, The p-value is not the Issue Here"
+author: "<br>Andy Kampfschulte, MS"
+date: "<br>February 5, 2020"
+output: 
+  tint::tintHtml:
+    includes:
+      in_header: header.html
+---
+
+---
+
+# Sample Size and Power Calculations
+
+
+>This whole bit is based around the idea of Null Hypothesis Significance Testing (NHST), in which a sample statistic is compared against a Null Hypothesis to determine the probability of obtaining a sample as extreme or more extreme if the Null Hypothesis were true (*we call this probability a p-value*).
+
+
+
+First, Let's determine what we *actually* mean when we talk the power of a statistical test. 
+
+When we perform a statistical test - any statistical test - there are a possibility of 4  outcomes with respect to reality. The below table articulates these possible outcomes.
+
+|   Result/Reality               |  Ho is true  | Ho is False     |
+|:-------------------------------|:------------:|:---------------:|
+| Reject Null Hypothesis         | Type-I Error |  *Correct*      |
+| Fail to Reject Null Hypothesis | *Correct*      | Type-II Error |
+
+For any test result, rejecting or failing to reject the null hypothesis, the result can either be correct or incorrect. When the results are incorrect, they are called Type-I and Type-II Errors; Type-I being a False Positive, and Type-II being a False Negative.  
+
+
+In statistics, we denote the probability of a Type-I Error as $\alpha$, and the probability of a  Type-II Error is denoted as $\beta$.
+
+```{r, echo = FALSE, fig.margin = TRUE, eval = FALSE}
+M <- image_read("C:/Users/and34280/Projects/gifs/stats memes/hp_pvalue.jpg")
+image_resize(M, geometry = "900x900")
+```
+
+> $\boldsymbol{\alpha}$: The probability of a Type-I Error, or the probability of Rejecting the Null Hypothesis when the Null Hypothesis is, in reality, true. Alpha is typically set to 0.05 - **This has major implications on the p-value**.
+
+>$\boldsymbol{\beta}$: The probability of a Type-II Error, or the probability of Failing to Reject the Null Hypothesis when the Null Hypothesis is, in reality, False. This is typically set to 0.20.
+
+>$\boldsymbol{1-\beta}$: The power of a statistical test. In other words, the power of a given statistical test to correctly detect and effect, if such effect extists. Depending on $\beta$, the power is usually set to 0.80. Meaning that the statistical test is powered to detect and effect correctly 80% of the time.
+
+***
+
+
+>**Food for Thought**
+
+>If our thereshold for *statistical significance* is a $\text{p-value} < 0.05$ (our level of alpha). What does statistical significant *really* mean? What is it regarding a $\text{p-value}<\alpha$ that makes something significant?
+
+
+<br>
+
+<center>
+
+[**Here is a useful link that illustrates power analyses**](https://rpsychologist.com/d3/NHST/)
+
+</center>
+
+
+
+
+
+
+# Trial Design Considerations
+
+
+
+
+## Randomization and Blinding
+
+<br>
+
+<center>
+[**Here is link to a useful Randomization Tool**](https://www.graphpad.com/quickcalcs/index.cfm)
+
+[**Here is a helpful article for RCT design**](https://obgyn.onlinelibrary.wiley.com/doi/full/10.1111/aogs.13309)
+
+</center>
+
+**Some Randomization Schemes You Might Encounter**
+
+>**Simple Randomization:** Randomization based on a single sequence of random assignments is known as simple randomization. This technique maintains complete randomness of the assignment of a subject to a particular group. The most common and basic method of simple randomization is flipping a coin.
+>In statistics, the gold standard in sample collection is a *Simple Random Sample*, in which every individual in the defined population has a equal probability of being selected into the population. Due to confounding factors, this often very difficult 
+
+
+
+
+>**Covariate Adaptive Randomization:** Addresses the imbalance of covariates in smaller sample sizes. Covariate adaptive randomization has been recommended by many researchers as a valid alternative randomization method for clinical research. In covariate adaptive randomization, a new participant is sequentially assigned to a particular treatment group by taking into account the specific covariates and previous assignments of participants. Covariate adaptive randomization uses the method of minimization by assessing the imbalance of sample size among several covariates.
+
+
+
+
+>**Stratified Randomization:** Designed to address the need to control and balance the influence of covariates. This method can be used to achieve balance among groups in terms of subjects’ baseline characteristics (covariates). Specific covariates must be identified by the researcher who understands the potential influence each covariate has on the dependent variable. Stratified randomization is achieved by generating a separate block for each combination of covariates, and subjects are assigned to the appropriate block of covariates. After all subjects have been identified and assigned into blocks, simple randomization is performed within each block to assign subjects to one of the groups.
+
+
+
+
+>**Block Randomization:** Designed to randomize subjects into groups that result in equal sample sizes. This method is used to ensure a balance in sample size across groups over time. Blocks are small and balanced with predetermined group assignments, which keeps the numbers of subjects in each group similar at all times. The block size is determined by the researcher and should be a multiple of the number of groups (i.e., with two treatment groups, block size of either 4, 6, or 8). Blocks are best used in smaller increments as researchers can more easily control balance. *Frequently Used*
+
+>[Source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3136079/)')
+
+
+
+## Superiority/Equivalence/Non-Inferiority
+
+
+
+>**Sueriority:** Simply designed to test if one treatment is superior. This is easy to set in terms of statistical hypotheses.
+ $$H_0: \Delta = 0$$
+ $$H_A: \Delta \ne 0$$
+
+
+Non-Inferiority & Equivalence testing require more logical absraction due to the nature of Null Hypothesis Significance Testing. In standard practice, we can only *Reject* the Null Hypothesis or *Fail to Reject* the Null Hypothesis. Therefore, from the perspective of statistics, we can only determine if two treatments are *different*. Determining that two treatments are *not* different requires some logical loopholes.
+
+Equivalence and Non-Inferiority Testing both require pre-determined bounds. In other words, they require an a priori definition of what equivalence or non-inferioirty mandate. 
+
+>**Non-Inferiority:** Design to test if a treatment is *at least* as good as another.
+$$H_0: \Delta > \Delta_{NI}$$
+$$H_A: \Delta \le \Delta_{NI}$$
+
+>**Equivalence:** Designed to test whether a treatment is *no better* and *no worse* than an alternative treatment.
+$$H_0: \Delta > \Delta_E $$
+$$H_A: \Delta_E \le \Delta \le \Delta_E$$
+
+<br>
+<br>
+<center>
+[**Link to Supplemental Article**](http://hjdbulletin.org/files/archive/pdfs/431.pdf)
+</center>
+
+
+
+## Interim Analyses
+
+With Randomized Control Trials, very often the length of the trial is uneccessary. For instance, if the treatment arms of the trial is performing poorly, prolonging the trial to observe a superior effect in  the treatment group would be futile. On the other hand, if the treatment group is performing exceedingly well, it would be unethical to deprive the control group of the superior treatment any further. Interim analyses are designed to address these ethical considerations of stopping a study short. 
+
+Interim Analyses must be preplanned before the start of a prospective trial, at a specified time in the trial. If there is blinding, two statisticians are required. An unblinded statistician will create the randomization list, and the blinded statistician will perform the interim analysis. This aims to mitigate any bias that could arise from any incentive the unblinded statistician may have when performing the interim analysis. 
+
+Interim analyses are designed to address multiplicity, or performing the same test more than once on the same data. For any one test, the Type-I Error rate is set to 0.05, but by performing the same test on the same data multiple times, this Type-I Error rate increases drastically. To avoid a false positive- which would prematurely stop the trial, Interim Analyses are set up to account for this inflated Type-I Error rate. **Note:** Interim analysis will always require a larger sample size.
+
+Studies can be stopped at interim by citing Futility and/or Efficacy. Futility is claimed when the treatment arm is showing no discernable effect from the control, and is unlikely to change. Efficacy occurrs when the treatemnt is performing much better than the control, and has proven superiority. The below plot illustrates Efficacy and Futility bounds for an RCT with 25 interim analyses.
+
+```{r, echo = FALSE, message=FALSE, warning = FALSE}
+library(magick)
+library(ggplot2)
+
+# image_read("interim.png")
+
+x <- seq(1,25,1)
+y1 <- exp(-x/10)+2
+y2 <- -exp(-x/10)+2
+
+
+point <- cumsum(sample(c(-.02, .02), 25, TRUE))+2
+
+
+library(wesanderson)
+pal <- wes_palette("Zissou1", 7, "continuous")
+ggplot()+
+  geom_line(aes(x = x, y = y1), 
+            color = pal[1], size = 2, alpha = .3)+
+  geom_line(aes(x = x, y = y2), 
+            color = pal[7], size = 2, alpha = .3)+
+  geom_point(aes(x = x, y = y1), 
+             color = pal[1], size = 2, alpha = .9)+
+  geom_point(aes(x = x, y = y2), 
+             color = pal[7], size = 2, alpha = .9)+
+  geom_line(aes(x = x, y = point), size = 1.5, alpha = .5)+
+  theme_bw()+
+  labs(y = "t-Statistic",
+       x = "Study Time",
+       title = "Efficacy & Futility Boundaries \nfor Group_Sequntial Designs")
+
+```
+
+
+>**A Few Notes from a Statistican on Interim Analyses**
+
+>  - Interim Analyses **are not** Data Safety Monitoring Boards (DSMBs). DSMBs are a collection of experts that monitor patient safety throughout a high-risk trial. They *can* stop the trial over patient safety concerns, but they *do not* perform any sort of analyses on the data.
+  
+>  - Interim Analyses do not exist as a *sneek peek* of the data. There are some scenarios where a trial will proceed after reaching stopping criteria at an interim analyses, but that doesn't mean anyone other than the blinded statistician should be looking at the data.
+</div>
+
+
+# Philosphical Considerations for Study Design: the p-value
+
+[A great article summarizing the debate on p-values](https://fivethirtyeight.com/features/statisticians-found-one-thing-they-can-agree-on-its-time-to-stop-misusing-p-values/) from the perspective of statisticians.
+
+<iframe src="https://fivethirtyeight.abcnews.go.com/video/embed/56150342" width="640" height="360" scrolling="no" style="border:none;" allowfullscreen></iframe>
+
+>"Informally, a p-value is the probability under a specified statistical model that a statistical summary of the data (e.g., the sample
+mean difference between two compared group) would be equal
+to or more extreme than its observed value."
+>
+
+> '--- ASA Statement on p-values (2016)')
+
+<center>
+
+**The American Statistical Association's 6 principles of p-values:** 
+
+  - P-values can indicate how incompatible the data are
+with a specified statistical model.
+  - P-values do not measure the probability that the studied hypothesis is true, or the probability that the data
+were produced by random chance alone.
+  - Scientific conclusions and business or policy decisions
+should not be based only on whether a p-value passes
+a specific threshold.
+ - Proper inference requires full reporting and
+transparency
+ - A p-value, or statistical significance, does not measure
+the size of an effect or the importance of a result.
+  - By itself, a p-value does not provide a good measure of
+evidence regarding a model or hypothesis.
+
+</center>
+
+## p-Hacking
+
+p-hacking is the practice of gathering a surplus of variables - more than is necessary to answer your research question, and running test after test to stumble upon and p-value that is less than 0.05, or in otherwords, publishable.
+
+If research is done *correctly*, p-hacking should be nearly impossible. The following research practices are designed to mitigate such superfluous hackery.
+
+  - Developing a specific hypothesis to test
+  - Not collecting data until such a hypothesis is developed
+  - Developing an *a priori* statistical analysis plan
+  - Powering statistical tests appropriately, and accounting for multiplicity
+
+[An informative p-hacking article](https://fivethirtyeight.com/features/science-isnt-broken/#part1)
+
+
+
+## Multiplicity: The Scourge of the Social Sciences
+
+If $N$ independent tests are examined for statistical significance, and all of the individual null hypotheses are true, then the probability that at least one of them will be found to be statistically significant is equal to $1 – (1 – \alpha)^N$, for any given level of alpha ($\alpha$).
+
+If the critical alpha level for a single test is set at $\alpha = .05$, this means the probability of incorrectly rejecting the null hypothesis (Type-I Error/False Positive) is 0.05. However, if two or three tests are run, the probability of achieving at least one False-Positive increases drastically. For a study performing 14 independent tests, the probability that at least one result will be found to be statistically significant is $1 – (1 – .05)^{14} = .5124$. That's a higher probability of getting an error than getting a correct result.
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.fullwidth = TRUE}
+library(hrbrthemes)
+N <- seq(1,50,1)
+alpha <- c(0.025, 0.05, 0.1)
+err <- sapply(N, function(x){1-((1-alpha)^x)})
+df <- as.data.frame(cbind(N, t(err)))
+colnames(df)<- c("N", "alpha1", "alpha2", "alpha3")
+
+library(tidyr)
+library(wesanderson)
+pal <- wes_palette("Zissou1", 3, "continuous")
+
+df <- df %>% 
+  pivot_longer(., cols = 2:4)
+ggplot(df)+
+  geom_line(aes(x = N, y = value, group = name, color = name), size = 1.5)+
+  theme_ipsum_rc()+
+  theme(axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12))+
+  scale_color_manual(aesthetics = "color", values = pal,
+                     labels = c("0.025",
+                                "0.050",
+                                "0.100"))+
+  scale_x_continuous(breaks = seq(0,length(N),5))+
+  labs(x = "Number of Independent Tests",
+       y = "Type-I Error Rate",
+       title = "Increases in the Type-I Error Rate",
+       color = "Alpha")
+
+```
+
+There are many ways to mitigate the effects of multiple testing. There are step-up, step-down, and family-wise methods- each with their own merits. There's also the family-wise error rate to consider, or the false discovery rate to delineate against. 
+
+
+
+>**Ranganathan, Pramesh,and Buyse (2016) note:**
+
+The following simple strategies have been suggested to handle multiple comparisons:
+
+  - Readers should evaluate the quality of the study and the actual effect size instead of focusing only on statistical significance
+
+  - Results from single studies should not be used to make treatment decisions; instead, one should look for scientific plausibility and supporting data from other studies which can validate the results of the original study
+
+  - Authors should try to limit comparisons between groups and identify a single primary endpoint; using a composite endpoint or global assessment tool is also an acceptable alternative to using multiple endpoints. 
+  
+[Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4840791/)
+
+
+
+
+
+### Why not just ban the p-value?
+
+*My subtle opinion:* p-values aren't the problem, bad science is the problem. Science is a feild of nuance, and doesn't lend itself to broad, sweeping conclusions. Neither does the p-value. Researchers have over-relied on the p-value without fully understanding what the p-value *actually* means, in part because they think it can be used to make sweeping, definitive, conclusions - which it can't. The p-value isn't a magical hypothesis-rejecting tool, so it should ceased to be used that way. *Embrace the variability in your data*.
+
+
+>Psychologist Daniel Lakens notes on the ban of p-values in the journal *Basic & Applied Social Psycology*
+
+>"In their latest editorial, Trafimow and Marks hit down some arguments you could, after a decent bottle of liquor, interpret as straw men against their ban of p-values. They don’t, and have never, discussed the only thing p-values are meant to do: *control error rates.* Instead, they seem happy to publish articles where some (again, there are some very decent articles in BASP) authors get all the leeway they need to adamantly claim effects are observed, even though these effects look a lot like noise.
+>The absence of p-values has not prevented dichotomous conclusions, nor claims that data support theories (which is only possible using Bayesian statistics), nor anything else p-values were blamed for in science. After reading a year’s worth of BASP articles, you’d almost start to suspect p-values are not the real problem. Instead, it looks like researchers find making statistical inferences pretty difficult, and forcing them to ignore p-values didn’t magically make things better.
+>As far as I can see, all that banning p-values has done, is increase the Type 1 error rate in BASP articles. Restoring a correct use of p-values would substantially improve how well conclusions authors draw actually follow from the data they have collected. The only expense, I predict, is a much lower number of citations to articles written by Trafimow about how useless p-values are."
+
+
+
+<br>
+<br>
+
